@@ -1,0 +1,11 @@
+<a href="{{ .Permalink }}" class="episode-preview" data-preview="{{ .Params.paletteurl }}">
+  <div class="episode-preview__image" style="background-image: url('{{ .Params.thumbnailurl }}')"></div>
+  <div class="episode-preview__meta">
+    <div class="episode-preview__title">
+      {{ .Title }}
+    </div>
+    <div class="episode-preview__details">
+      {{ .Params.category }} • Episode {{ .Params.episodenumber }}
+    </div>
+  </div>
+</a>

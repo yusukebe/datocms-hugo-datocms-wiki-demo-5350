@@ -1,0 +1,9 @@
+baseurl = "/"
+languageCode = "en-us"
+
+[taxonomies]
+  season = "seasons"
+
+# datocms:start
+title = "Dundler Mifflin"
+# datocms:end

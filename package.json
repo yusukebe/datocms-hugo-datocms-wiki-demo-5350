@@ -1,0 +1,24 @@
+{
+  "name": "dundler-mifflin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build:hugo": "hugo --config config.toml",
+    "build:datocms": "dato dump",
+    "build": "npm run build:datocms && npm run build:hugo",
+    "start:hugo": "hugo server --config config.toml",
+    "start:datocms": "npx dato dump --watch",
+    "start:livereload": "livereload public -e 'html' -p 5678",
+    "start": "mkdir -p content && npx dato check && concurrently -p \"[{name}]\" -c \"blue,green,yellow\" -k -n hugo,livereload,dato \"npm run start:hugo\" \"npm run start:livereload\" \"npm run start:datocms\""
+  },
+  "dependencies": {
+    "ellipsize": "^0.1.0",
+    "imagesloaded": "^4.1.4",
+    "livereload": "0.8.2"
+  },
+  "devDependencies": {
+    "concurrently": "5.1.0",
+    "datocms-client": "^3.1.3"
+  }
+}
